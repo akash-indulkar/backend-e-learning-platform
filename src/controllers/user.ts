@@ -143,7 +143,7 @@ export const purchaseCourse = async (req: Request, res: Response) => {
     const userId = JSON.stringify(req.id);
     const courseId = req.params.courseId as string;
     try {
-        const fetchQuery = CourseQueries.getCourseById
+        const fetchQuery = CourseQueries.getCourseByCourseId
         const fetchQueryValues = [courseId];
         const course = await pool.query(fetchQuery, fetchQueryValues);
         if (course.rows[0]) {
